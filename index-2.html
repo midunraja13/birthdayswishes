@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#ff6eb4">
+<title>Happy Birthday Vijayrani Amma 🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700;900&family=Baloo+2:wght@700;800&family=Fredoka+One&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+
+/* ═══════════════════════════════
+   RESET & BASE
+═══════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:'Noto Sans Tamil',sans-serif;
+  background:#fff5fb;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── CONFETTI ── */
+#cc{position:fixed;inset:0;pointer-events:none;z-index:9990;}
+
+/* ── FLY EMOJI ── */
+.fly{
+  position:fixed;pointer-events:none;z-index:9989;
+  animation:flyUp linear forwards;will-change:transform;
+}
+@keyframes flyUp{
+  0%{transform:translateY(0) scale(1) rotate(0deg);opacity:1;}
+  100%{transform:translateY(-110vh) scale(0.3) rotate(480deg);opacity:0;}
+}
+
+/* ── RAINBOW RIBBON ── */
+.ribbon{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  background:linear-gradient(90deg,#ff6eb4,#ffb347,#ffe066,#7eefc7,#80d4ff,#c9a6ff,#ff6eb4);
+  background-size:300% 100%;
+  animation:rbSlide 3s linear infinite;
+  padding:10px 0;text-align:center;
+  font-size:11px;font-weight:800;color:#fff;
+  letter-spacing:3px;text-transform:uppercase;
+  box-shadow:0 2px 16px rgba(255,110,180,.4);
+  white-space:nowrap;overflow:hidden;
+}
+@keyframes rbSlide{to{background-position:-300% 0;}}
+
+/* ═══════════════════════════════
+   HERO
+═══════════════════════════════ */
+#hero{
+  min-height:100vh;
+  padding:70px 24px 60px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 20% 10%,rgba(255,110,180,.22) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 90%,rgba(201,166,255,.22) 0%,transparent 50%),
+    linear-gradient(180deg,#fff5fb,#fef0fa);
+}
+
+.bg-blob{
+  position:absolute;border-radius:50%;pointer-events:none;
+  animation:blobFloat ease-in-out infinite;
+}
+@keyframes blobFloat{
+  0%,100%{transform:translateY(0) scale(1);}
+  50%{transform:translateY(-20px) scale(1.05);}
+}
+
+/* photo frame */
+.photo-wrap{position:relative;margin-bottom:28px;display:inline-block;}
+
+.spin-ring{
+  position:absolute;inset:-16px;border-radius:50%;
+  background:conic-gradient(#ff6eb4,#ffb347,#ffe066,#7eefc7,#80d4ff,#c9a6ff,#ff6eb4);
+  animation:spinFull 4s linear infinite;filter:blur(2px);z-index:0;
+}
+.spin-ring::after{content:'';position:absolute;inset:7px;border-radius:50%;background:#fff5fb;}
+@keyframes spinFull{to{transform:rotate(360deg);}}
+
+.hero-photo{
+  width:170px;height:170px;border-radius:50%;object-fit:cover;
+  border:5px solid #fff;position:relative;z-index:2;
+  box-shadow:0 10px 36px rgba(255,110,180,.4);display:block;
+}
+.hero-photo-fallback{
+  width:170px;height:170px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#ffe0f0,#fff0e0);
+  font-size:72px;border:5px solid #fff;
+  position:relative;z-index:2;
+  box-shadow:0 10px 36px rgba(255,110,180,.4);
+}
+
+.crown{
+  position:absolute;top:-36px;left:50%;transform:translateX(-50%);
+  font-size:38px;z-index:5;
+  animation:crownDance 2s ease-in-out infinite;
+  filter:drop-shadow(0 3px 8px rgba(255,180,0,.5));
+}
+@keyframes crownDance{
+  0%,100%{transform:translateX(-50%) rotate(-8deg) translateY(0);}
+  50%{transform:translateX(-50%) rotate(8deg) translateY(-7px);}
+}
+
+.orbit-ring{
+  position:absolute;width:230px;height:230px;
+  top:50%;left:50%;margin:-115px 0 0 -115px;
+  border-radius:50%;animation:spinFull 8s linear infinite;
+  pointer-events:none;z-index:3;
+}
+.orbit-ring span{
+  position:absolute;top:0;left:50%;
+  margin-left:-12px;font-size:20px;
+  transform-origin:12px 115px;
+}
+.orbit-ring span:nth-child(1){transform:rotate(0deg);}
+.orbit-ring span:nth-child(2){transform:rotate(72deg);}
+.orbit-ring span:nth-child(3){transform:rotate(144deg);}
+.orbit-ring span:nth-child(4){transform:rotate(216deg);}
+.orbit-ring span:nth-child(5){transform:rotate(288deg);}
+
+/* hero text */
+.badge{
+  display:inline-block;
+  background:linear-gradient(135deg,#ff6eb4,#c9a6ff);
+  color:#fff;border-radius:40px;padding:6px 22px;
+  font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:14px;animation:popIn .6s .1s both;
+  box-shadow:0 4px 14px rgba(255,110,180,.3);
+}
+
+.hero-name{
+  font-family:'Baloo 2',cursive;
+  font-size:clamp(56px,16vw,88px);line-height:.9;
+  background:linear-gradient(135deg,#ff3d8b 0%,#ff8c42 50%,#ffe066 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:popIn .6s .25s both;margin-bottom:4px;letter-spacing:-1px;
+}
+
+.hero-amma{
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(30px,9vw,46px);color:#ff6eb4;
+  animation:popIn .6s .4s both;margin-bottom:22px;letter-spacing:1px;
+}
+
+.wish-card{
+  background:#fff;border:2.5px dashed #ffb3d9;border-radius:28px;
+  padding:18px 22px;max-width:340px;width:100%;
+  font-size:17px;color:#cc4488;line-height:1.85;font-weight:600;
+  margin:0 auto 26px;position:relative;
+  animation:popIn .6s .55s both;
+  box-shadow:0 6px 24px rgba(255,110,180,.1);
+}
+.wish-card::before{
+  content:'💬';position:absolute;
+  top:-18px;left:50%;transform:translateX(-50%);font-size:26px;
+}
+
+.cta-btn{
+  background:linear-gradient(135deg,#ff6eb4,#c9a6ff);
+  color:#fff;border:none;font-family:'Fredoka One',cursive;
+  font-size:20px;padding:16px 44px;border-radius:50px;cursor:pointer;
+  box-shadow:0 8px 24px rgba(255,110,180,.45);
+  animation:popIn .6s .7s both;
+  transition:transform .2s,box-shadow .2s;min-height:56px;
+}
+.cta-btn:active{transform:scale(.94);}
+
+@keyframes popIn{
+  from{opacity:0;transform:scale(.5) translateY(20px);}
+  to{opacity:1;transform:scale(1) translateY(0);}
+}
+
+.scroll-hint{
+  margin-top:28px;font-size:22px;
+  animation:bounce 1.5s ease-in-out infinite;opacity:.5;
+}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+/* ═══════════════════════════════
+   POLAROID WALL
+═══════════════════════════════ */
+#photos{
+  padding:60px 20px 70px;
+  background:
+    url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1.5' fill='rgba(255,110,180,0.12)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,#fff0e8,#f5eeff);
+  background-size:24px 24px,100%;
+  position:relative;overflow:hidden;
+}
+
+.sec-label{
+  text-align:center;font-family:'Baloo 2',cursive;
+  font-size:clamp(24px,7vw,36px);color:#ff6eb4;margin-bottom:6px;
+}
+.sec-sub{text-align:center;color:#ccc;font-size:13px;margin-bottom:36px;}
+
+.polaroid-stack{
+  display:flex;flex-direction:column;
+  align-items:center;gap:0;
+}
+
+.pol{
+  width:min(300px,88vw);
+  background:#fff;padding:12px 12px 44px;
+  border-radius:4px;
+  box-shadow:4px 8px 24px rgba(0,0,0,.14);
+  position:relative;cursor:pointer;
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s;
+  margin-top:-18px;
+}
+.pol:first-child{margin-top:0;}
+
+.pol::before{
+  content:'';position:absolute;
+  top:-13px;left:50%;transform:translateX(-50%);
+  width:52px;height:22px;border-radius:3px;
+  opacity:.75;box-shadow:0 1px 4px rgba(0,0,0,.1);
+}
+
+.pol:nth-child(1){transform:rotate(-4deg);  z-index:6;}
+.pol:nth-child(2){transform:rotate(3.5deg); z-index:5;}
+.pol:nth-child(3){transform:rotate(-2.5deg);z-index:4;}
+.pol:nth-child(4){transform:rotate(5deg);   z-index:3;}
+.pol:nth-child(5){transform:rotate(-3deg);  z-index:2;}
+.pol:nth-child(6){transform:rotate(2deg);   z-index:1;}
+
+.pol:nth-child(1)::before{background:rgba(255,110,180,.8);}
+.pol:nth-child(2)::before{background:rgba(201,166,255,.8);}
+.pol:nth-child(3)::before{background:rgba(126,239,199,.8);}
+.pol:nth-child(4)::before{background:rgba(255,179,71,.8);}
+.pol:nth-child(5)::before{background:rgba(128,212,255,.8);}
+.pol:nth-child(6)::before{background:rgba(255,230,100,.8);}
+
+.pol:active{
+  transform:rotate(0deg) scale(1.04) !important;
+  box-shadow:8px 16px 40px rgba(0,0,0,.22);z-index:20;
+}
+
+.pol img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:2px;pointer-events:none;}
+.pol .pholder{
+  width:100%;aspect-ratio:1;display:none;
+  align-items:center;justify-content:center;
+  flex-direction:column;gap:8px;
+  background:linear-gradient(135deg,#ffe0f0,#fff0e0);
+  border-radius:2px;font-size:34px;
+}
+.pol .pholder small{font-size:11px;color:#ccc;font-family:monospace;}
+
+.pol .caption{
+  margin-top:6px;text-align:center;
+  font-family:'Caveat',cursive;
+  font-size:18px;color:#cc4488;line-height:1.2;
+}
+
+.pol .stk{
+  position:absolute;bottom:-8px;right:4px;
+  font-size:28px;
+  filter:drop-shadow(1px 2px 3px rgba(0,0,0,.12));
+  transform:rotate(12deg);
+}
+
+/* ═══════════════════════════════
+   CARDS
+═══════════════════════════════ */
+#cards{
+  padding:60px 20px 70px;
+  background:linear-gradient(180deg,#f5eeff,#e8f8ff);
+  text-align:center;
+}
+
+.cards-wrap{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:14px;max-width:400px;margin:0 auto;
+}
+
+.icard{
+  background:#fff;border-radius:24px;
+  padding:24px 12px 18px;cursor:pointer;
+  border:3px solid var(--c,#ffe0f0);
+  box-shadow:0 4px 18px rgba(0,0,0,.06);
+  transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s;
+  position:relative;overflow:hidden;min-height:120px;
+}
+.icard::before{
+  content:'';position:absolute;inset:0;
+  background:var(--c,#ffe0f0);opacity:0;
+  transition:opacity .2s;border-radius:21px;
+}
+.icard:active{transform:scale(.93);box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.icard:active::before{opacity:.15;}
+.icard .ico{font-size:40px;display:block;margin-bottom:8px;position:relative;z-index:1;}
+.icard h4{font-size:14px;font-weight:800;color:#444;position:relative;z-index:1;margin-bottom:2px;}
+.icard p{font-size:11px;color:#aaa;position:relative;z-index:1;line-height:1.3;}
+
+/* ═══════════════════════════════
+   FINALE
+═══════════════════════════════ */
+#finale{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:60px 24px 80px;text-align:center;
+  position:relative;overflow:hidden;
+  animation:finBg 6s ease-in-out infinite;
+}
+@keyframes finBg{
+  0%,100%{background:linear-gradient(160deg,#ffe0f5,#fff3e0,#e8f8ff);}
+  50%{background:linear-gradient(160deg,#ffc5e8,#ffe5c0,#d0f0ff);}
+}
+
+.big-cake{
+  font-size:96px;display:block;
+  animation:cakeBob 1.3s ease-in-out infinite;
+  filter:drop-shadow(0 10px 22px rgba(255,110,180,.3));
+  margin-bottom:16px;
+}
+@keyframes cakeBob{
+  0%,100%{transform:scale(1) rotate(-4deg);}
+  50%{transform:scale(1.08) rotate(4deg) translateY(-10px);}
+}
+
+.fin-title{
+  font-family:'Baloo 2',cursive;
+  font-size:clamp(38px,11vw,72px);line-height:1;
+  background:linear-gradient(135deg,#ff3d8b,#ff9a3d,#c9a6ff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:4px;
+}
+.fin-name{
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(24px,8vw,48px);color:#ff6eb4;
+  margin-bottom:22px;line-height:1.1;
+}
+
+.fin-msg{
+  background:rgba(255,255,255,.75);
+  border:2.5px dashed #ffb3d9;border-radius:24px;
+  padding:20px 22px;max-width:340px;width:100%;
+  font-size:17px;color:#cc4488;line-height:1.9;font-weight:600;
+  margin-bottom:30px;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+
+.surprise-btn{
+  background:linear-gradient(135deg,#ff3d8b,#ffb347);
+  color:#fff;border:none;font-family:'Fredoka One',cursive;
+  font-size:22px;padding:18px 50px;border-radius:50px;cursor:pointer;
+  box-shadow:0 8px 28px rgba(255,61,139,.45);
+  animation:btnPulse 2s ease-in-out infinite;
+  transition:transform .2s;min-height:60px;
+}
+.surprise-btn:active{transform:scale(.93);animation:none;}
+@keyframes btnPulse{
+  0%,100%{box-shadow:0 8px 28px rgba(255,61,139,.4);}
+  50%{box-shadow:0 8px 48px rgba(255,61,139,.75),0 0 0 12px rgba(255,61,139,.1);}
+}
+
+#extra-msg{
+  display:none;margin-top:22px;
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(18px,5vw,26px);color:#ff3d8b;
+  animation:popIn .6s both;line-height:1.6;
+}
+
+/* ═══════════════════════════════
+   MODAL — NATIVE BOTTOM SHEET
+═══════════════════════════════ */
+.overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  z-index:10000;display:flex;
+  align-items:flex-end;justify-content:center;
+  padding:0;opacity:0;pointer-events:none;transition:opacity .25s;
+}
+.overlay.on{opacity:1;pointer-events:all;}
+
+.sheet{
+  background:#fff;border-radius:32px 32px 0 0;
+  padding:10px 28px 44px;
+  width:100%;max-width:480px;text-align:center;
+  border-top:3px solid #ffb3d9;
+  box-shadow:0 -8px 40px rgba(255,110,180,.2);
+  transform:translateY(100%);
+  transition:.4s cubic-bezier(.34,1.56,.64,1);
+}
+.overlay.on .sheet{transform:translateY(0);}
+
+.handle{width:44px;height:5px;border-radius:3px;background:#eee;margin:0 auto 20px;}
+
+.sheet .s-emoji{font-size:66px;display:block;margin-bottom:10px;}
+.sheet h3{font-family:'Fredoka One',cursive;font-size:26px;color:#ff3d8b;margin-bottom:8px;}
+.sheet p{font-size:17px;color:#666;line-height:1.8;}
+.sheet-btn{
+  margin-top:22px;padding:13px 32px;
+  border:2.5px solid #ffb3d9;border-radius:30px;
+  background:transparent;color:#ff6eb4;
+  font-size:16px;font-weight:700;cursor:pointer;
+  transition:.2s;min-height:48px;width:100%;
+}
+.sheet-btn:active{background:#ff6eb4;color:#fff;border-color:#ff6eb4;}
+
+</style>
+</head>
+<body>
+
+<canvas id="cc"></canvas>
+
+<!-- BOTTOM SHEET MODAL -->
+<div class="overlay" id="overlay">
+  <div class="sheet" id="sheet">
+    <div class="handle"></div>
+    <span class="s-emoji" id="s-emoji"></span>
+    <h3 id="s-title"></h3>
+    <p id="s-body"></p>
+    <button class="sheet-btn" onclick="closeSheet()">💕 Close</button>
+  </div>
+</div>
+
+<!-- RAINBOW RIBBON -->
+<div class="ribbon">🎀 Happy Birthday  Amma 🎀 Happy Birthday  Amma 🎀 Happy Birthday  Amma 🎀</div>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<section id="hero">
+  <div class="bg-blob" style="width:220px;height:220px;background:#ffb3d9;opacity:.15;top:-40px;left:-60px;animation-duration:7s;"></div>
+  <div class="bg-blob" style="width:160px;height:160px;background:#c9a6ff;opacity:.14;top:10%;right:-40px;animation-duration:9s;animation-delay:-2s;"></div>
+  <div class="bg-blob" style="width:120px;height:120px;background:#ffe066;opacity:.17;bottom:12%;left:-30px;animation-duration:6s;animation-delay:-1s;"></div>
+  <div class="bg-blob" style="width:180px;height:180px;background:#7eefc7;opacity:.13;bottom:-50px;right:-50px;animation-duration:8s;animation-delay:-3s;"></div>
+
+  <div class="photo-wrap">
+    <div class="crown">👑</div>
+    <div class="spin-ring"></div>
+    <img class="hero-photo" id="hero-img" src="582D5391-18F5-451E-B1F2-3D793A653ABA_1_105_c.jpeg" alt="Amma"
+      onerror="this.style.display='none'; document.getElementById('hero-fallback').style.display='flex';">
+    <div class="hero-photo-fallback" id="hero-fallback" style="display:none;"></div>
+    <div class="orbit-ring">
+      <span>🌸</span><span>💖</span><span>⭐</span><span>🎀</span><span>✨</span>
+    </div>
+  </div>
+
+  <div class="badge">🎂 இனிய பிறந்தநாள் 🎂</div>
+  <div class="hero-name">Vijayrani</div>
+  <div class="hero-amma">அம்மா ❤️</div>
+
+  <div class="wish-card">
+    உலகிலேயே சிறந்த அம்மா — <strong>நீங்கள்தான்!</strong> 🥰<br>
+    இனிய பிறந்தநாள் வாழ்த்துகள்! 🎉
+  </div>
+
+  <button class="cta-btn" onclick="heroCelebrate()">🎉 Celebrate!</button>
+  <div class="scroll-hint">👇</div>
+</section>
+
+<!-- ══════════════════════════════
+     POLAROID PHOTO WALL
+══════════════════════════════ -->
+<section id="photos">
+  <div class="sec-label">📸 Amma's Moments 🌸</div>
+  <div class="sec-sub">ஒவ்வொரு photo-வையும் tap பண்ணுங்க! 💕</div>
+
+  <div class="polaroid-stack">
+
+    <div class="pol" onclick="photoTap(0)">
+      <img src="582D5391-18F5-451E-B1F2-3D793A653ABA_1_105_c.jpeg" alt=""
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="pholder">📷<small>Photo 1</small></div>
+      <div class="caption">Queen 👑</div>
+      <span class="stk">👑</span>
+    </div>
+
+    <div class="pol" onclick="photoTap(1)">
+      <img src="IMG_3940.jpg" alt=""
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="pholder">📷<small>Photo 2</small></div>
+      <div class="caption">So beautiful! 😍</div>
+      <span class="stk">🌸</span>
+    </div>
+
+    <div class="pol" onclick="photoTap(2)">
+      <img src="FEE07824-41A5-4EED-91EF-838FF99152FF_1_105_c.jpeg" alt=""
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="pholder">📷<small>Photo 3</small></div>
+      <div class="caption">Best Amma ever! 🤗</div>
+      <span class="stk">💖</span>
+    </div>
+
+    <div class="pol" onclick="photoTap(3)">
+      <img src="6EF6A13A-0C5F-4A3B-8720-3AC6AB6B6F93_1_105_c.jpeg" alt=""
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="pholder">📷<small>Photo 4</small></div>
+      <div class="caption">Happy vibes ✨</div>
+      <span class="stk">⭐</span>
+    </div>
+
+    <div class="pol" onclick="photoTap(4)">
+      <img src="CA1457E8-9EB1-418B-8849-3CB0996CD7C4_1_105_c.jpeg" alt=""
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="pholder">📷<small>Photo 5</small></div>
+      <div class="caption">Love u Amma ❤️</div>
+      <span class="stk">🎀</span>
+    </div>
+
+    <div class="pol" onclick="photoTap(5)">
+      <img src="4D45A618-0CB8-4EBE-B90D-A0551C40316C_1_105_c.jpeg" alt=""
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="pholder">📷<small>Photo 6</small></div>
+      <div class="caption">Forever my hero 🥹</div>
+      <span class="stk">✨</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     CARDS
+══════════════════════════════ -->
+<section id="cards">
+  <div class="sec-label">💌 Amma is…</div>
+  <div class="sec-sub">Tap பண்ணி பாருங்க! 🥰</div>
+
+  <div class="cards-wrap">
+    <div class="icard" style="--c:#ffb3d9"
+      onclick="openSheet('👑','World No.1!','Vijayrani Amma — you are literally the best person in the world! ❤️')">
+      <span class="ico">👑</span><h4>Queen Amma</h4><p>World No.1 🏆</p>
+    </div>
+    <div class="icard" style="--c:#ffd6a0"
+      onclick="openSheet('🍲','Best Cook!','உங்கள் கையால் செஞ்ச சாப்பாட்டு taste-க்கு match யாரும் இல்ல! 😋 No restaurant ever came close.')">
+      <span class="ico">🍲</span><h4>Best Cook</h4><p>Master Chef 🍳</p>
+    </div>
+    <div class="icard" style="--c:#c9a6ff"
+      onclick="openSheet('🤗','Warmest Hugs!','Amma hug = instant happiness! 💕 Best therapy in the whole world.')">
+      <span class="ico">🤗</span><h4>Best Hugs</h4><p>Warm & Cozy 💕</p>
+    </div>
+    <div class="icard" style="--c:#a8f0d8"
+      onclick="openSheet('💬','Your Words','One word from you and my mind calms down. No matter how stressed I am, hearing your voice just fixes everything. Only you have that power, Amma.')">
+      <span class="ico">💬</span><h4>Your Words</h4><p>Calm my mind always</p>
+    </div>
+    <div class="icard" style="--c:#80d4ff"
+      onclick="openSheet('💪','My Strength!','When life gets tough, I think of you — and everything feels okay. You are my biggest strength, Amma. 🌈💪')">
+      <span class="ico">💪</span><h4>My Strength</h4><p>My hero 🦸‍♀️</p>
+    </div>
+    <div class="icard" style="--c:#ffb3d9"
+      onclick="openSheet('🌸','Always Beautiful!','No filter needed — Vijayrani Amma is naturally gorgeous! 😍✨ Age only makes you more beautiful.')">
+      <span class="ico">🌸</span><h4>Always Pretty</h4><p>Forever glowing ✨</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     FINALE
+══════════════════════════════ -->
+<section id="finale">
+  <span class="big-cake">🎂</span>
+
+  <div class="fin-title">Happy Birthday</div>
+  <div class="fin-name">Vijayrani Amma! 🎀</div>
+
+  <div class="fin-msg">
+    Love you so much! ❤️<br>
+    இனிய பிறந்தநாள் வாழ்த்துகள்! 🎉
+  </div>
+
+  <button class="surprise-btn" id="surprise-btn" onclick="bigSurprise()">
+    🎆 Surprise!
+  </button>
+
+  <div id="extra-msg">
+    🙏 Long live and be happy<br>Vijayrani Amma! 🙏
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     JAVASCRIPT
+══════════════════════════════ -->
+<script>
+/* ── CONFETTI ── */
+const canvas = document.getElementById('cc');
+const ctx    = canvas.getContext('2d');
+let CW, CH, bits = [], animRunning = false;
+
+function resizeCanvas(){
+  CW = canvas.width  = window.innerWidth;
+  CH = canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+const COLS = ['#ff6eb4','#ffb347','#ffe066','#7eefc7','#80d4ff','#c9a6ff','#ff3d8b','#fff','#ffb3d9','#ff6b9d'];
+
+function spawnBits(n){
+  for(let i = 0; i < n; i++){
+    bits.push({
+      x: Math.random() * CW,
+      y: -10 - Math.random() * CH * 0.4,
+      w: Math.random() * 13 + 4,
+      h: Math.random() * 7  + 3,
+      vx:(Math.random() - 0.5) * 5,
+      vy: Math.random() * 5 + 2,
+      rot: Math.random() * 360,
+      vr:(Math.random() - 0.5) * 9,
+      col: COLS[Math.floor(Math.random() * COLS.length)],
+      circ: Math.random() > 0.5
+    });
+  }
+}
+
+function drawBits(){
+  if(!animRunning) return;
+  ctx.clearRect(0, 0, CW, CH);
+  bits.forEach(b => {
+    b.x += b.vx; b.y += b.vy; b.rot += b.vr;
+    ctx.save();
+    ctx.translate(b.x, b.y);
+    ctx.rotate(b.rot * Math.PI / 180);
+    ctx.fillStyle = b.col;
+    if(b.circ){ ctx.beginPath(); ctx.arc(0,0,b.w/2,0,Math.PI*2); ctx.fill(); }
+    else ctx.fillRect(-b.w/2, -b.h/2, b.w, b.h);
+    ctx.restore();
+  });
+  bits = bits.filter(b => b.y < CH + 50);
+  if(bits.length) requestAnimationFrame(drawBits);
+  else animRunning = false;
+}
+
+function confetti(n){
+  spawnBits(n || 150);
+  if(!animRunning){ animRunning = true; drawBits(); }
+}
+
+/* ── FLY EMOJI ── */
+function flyEmoji(emoji, count, dur){
+  for(let i = 0; i < count; i++){
+    setTimeout(() => {
+      const d = document.createElement('div');
+      d.className = 'fly';
+      d.textContent = emoji;
+      d.style.left   = Math.random() * 100 + 'vw';
+      d.style.bottom = '0';
+      d.style.fontSize = (Math.random() * 18 + 14) + 'px';
+      d.style.animationDuration = (dur || Math.random() * 3 + 3) + 's';
+      document.body.appendChild(d);
+      setTimeout(() => d.remove(), 7500);
+    }, i * 100);
+  }
+}
+
+/* ── HERO BUTTON ── */
+function heroCelebrate(){
+  confetti(180);
+  flyEmoji('🌸',6); flyEmoji('❤️',6); flyEmoji('🎀',5); flyEmoji('⭐',4);
+  setTimeout(() => document.getElementById('photos').scrollIntoView({behavior:'smooth'}), 700);
+}
+
+/* ── PHOTO TAPS ── */
+const photoMsgs = [
+  ['👑','Queen!',           'Vijayrani Amma — every photo of yours is pure treasure! 💕'],
+  ['🌸','So Beautiful!',   'இந்த smile-க்கு sunshine கூட jealous வருது! 😍'],
+  ['💖','Pure Love!',       'This photo = 1000 words of love! ❤️'],
+  ['⭐','My Star!',         'You are the brightest star in my life, Amma! ✨'],
+  ['💬','Your Words!',      'One word from you and my mind calms down. Only you have that power! 🥰'],
+  ['✨','Glowing Always!',  'No filter, no edit — naturally gorgeous! 🌟'],
+];
+
+function photoTap(i){
+  const [e,t,b] = photoMsgs[i];
+  openSheet(e, t, b);
+  confetti(70);
+  flyEmoji(['🌸','💖','⭐'][i % 3], 4, 3);
+}
+
+/* ── BOTTOM SHEET ── */
+function openSheet(emoji, title, body){
+  document.getElementById('s-emoji').textContent = emoji;
+  document.getElementById('s-title').textContent = title;
+  document.getElementById('s-body').textContent  = body;
+  document.getElementById('overlay').classList.add('on');
+}
+function closeSheet(){ document.getElementById('overlay').classList.remove('on'); }
+
+let tsY = 0;
+document.getElementById('sheet').addEventListener('touchstart', e => { tsY = e.touches[0].clientY; }, {passive:true});
+document.getElementById('sheet').addEventListener('touchend',   e => {
+  if(e.changedTouches[0].clientY - tsY > 60) closeSheet();
+}, {passive:true});
+document.getElementById('overlay').addEventListener('click', e => {
+  if(e.target === document.getElementById('overlay')) closeSheet();
+});
+
+/* ── BIG SURPRISE ── */
+let surpriseFired = false;
+function bigSurprise(){
+  confetti(380);
+  ['🎂','🎉','🎆','🌸','❤️','👑','🎀','⭐','💖','✨','🥳','🎊'].forEach((e,i) =>
+    setTimeout(() => flyEmoji(e, 7, 4 + Math.random() * 2), i * 130)
+  );
+  const btn = document.getElementById('surprise-btn');
+  btn.textContent = '💕 Love you Amma!';
+  btn.style.background = 'linear-gradient(135deg,#c9a6ff,#ff6eb4)';
+  btn.style.animation = 'none';
+  if(!surpriseFired){
+    surpriseFired = true;
+    document.getElementById('extra-msg').style.display = 'block';
+  }
+}
+
+/* ── AUTO CONFETTI ON LOAD ── */
+window.addEventListener('load', () => {
+  setTimeout(() => { confetti(120); flyEmoji('🌸',5); flyEmoji('🎀',3); }, 1200);
+});
+
+/* ── AMBIENT HEARTS ── */
+setInterval(() => {
+  if(window.scrollY < window.innerHeight * 0.9){
+    const d = document.createElement('div');
+    d.className = 'fly';
+    d.textContent = ['🌸','💕','✨','🎀','❤️'][Math.floor(Math.random()*5)];
+    d.style.left  = Math.random() * 100 + 'vw';
+    d.style.bottom = '0';
+    d.style.fontSize = (Math.random() * 12 + 11) + 'px';
+    d.style.animationDuration = (Math.random() * 4 + 4) + 's';
+    d.style.opacity = '.35';
+    document.body.appendChild(d);
+    setTimeout(() => d.remove(), 9000);
+  }
+}, 1600);
+</script>
+</body>
+</html>
